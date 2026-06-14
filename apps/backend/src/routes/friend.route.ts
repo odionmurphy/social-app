@@ -103,7 +103,7 @@ export async function friendRoutes(fastify: FastifyInstance) {
       }
     })
 
-    const friends = friendships.map(f =>
+    const friends = friendships.map((f: any) =>
       f.requesterId === currentUserId ? f.addressee : f.requester
     )
     reply.send(friends)
@@ -167,7 +167,7 @@ export async function friendRoutes(fastify: FastifyInstance) {
     })
 
     // For each user, check friendship status
-    const usersWithStatus = await Promise.all(users.map(async (user) => {
+    const usersWithStatus = await Promise.all(users.map(async (user: any) => {
       const friendship = await prisma.friendship.findFirst({
         where: {
           OR: [
