@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "nodemon --exec ts-node src/index.ts",
     "build": "tsc",
+    "start": "node dist/index.js",
     "test": "jest --runInBand",
     "db:migrate": "prisma migrate dev",
     "db:studio": "prisma studio"
